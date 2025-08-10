@@ -8,13 +8,13 @@ function App() {
   const [codes, setCodes] = useState([]);
 
   const saveCode = async () => {
-    await axios.post('http://localhost:5000/save', { html, ts, css });
+    await axios.post('https://abcdefaman-backend.onrender.com/save', { html, ts, css });
     setHtml(''); setTs(''); setCss('');
     fetchCodes();
   };
 
   const fetchCodes = async () => {
-    const res = await axios.get('http://localhost:5000/codes');
+    const res = await axios.get('https://abcdefaman-backend.onrender.com/codes');
     setCodes(res.data);
   };
 
